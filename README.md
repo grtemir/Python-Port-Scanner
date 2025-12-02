@@ -8,19 +8,19 @@ This tool allows users to scan a target IP address for open ports, identify runn
 * **Port Scanning:** Scans a user-defined range of ports using raw Sockets (TCP).
 * **Banner Grabbing:** Automatically fetches service versions (e.g., Apache, OpenSSH) from open ports.
 * **HTTP Awareness:** Sends specific payloads (`GET /`) to wake up HTTP servers (Port 80) for version detection.
-* **Auto-Logging:** Saves all scan results, timestamps, and version details into `sonuclar.txt`.
+* **Auto-Logging:** Saves all scan results, timestamps, and version details into `reports.txt`.
 * **User Friendly:** Target IP, Port Range, and Timeout settings are taken dynamically from the user.
 
 ## 🛠️ Installation & Usage
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/KULLANICI_ADIN/REPO_ADIN.git](https://github.com/grtemir/Python-Port-Scanner.git)
+    git clone [https://github.com/grtemir/Python-Port-Scanner.git](https://github.com/grtemir/Python-Port-Scanner.git)
     ```
 
 2.  **Navigate to the directory:**
     ```bash
-    cd REPO_ADIN
+    cd Python-Port-Scanner
     ```
 
 3.  **Run the tool:**
