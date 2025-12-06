@@ -1,15 +1,34 @@
 import socket # For network connections
 import sys    # For system-specific parameters and functions
 from datetime import datetime # for timestamping
+import argparse # For command-line argument parsing
 
-#Get target ip from user
-target = input("Enter target ip address: ") 
+# Set up command-line argument parser
+parser = argparse.ArgumentParser(description='Python Port Scanner - Scan ports on a target host')
+parser.add_argument('--target', '-t', type=str, default='google.com', 
+                    help='Target IP address or hostname (default: google.com)')
+parser.add_argument('--timeout', type=float, default=1.0,
+                    help='Connection timeout in seconds (default: 1.0)')
+parser.add_argument('--start-port', type=int, default=1,
+                    help='Starting port number (default: 1)')
+parser.add_argument('--end-port', type=int, default=100,
+                    help='Ending port number (default: 100)')
+parser.add_argument('--interactive', '-i', action='store_true',
+                    help='Run in interactive mode (prompt for inputs)')
 
-timeout=float(input("Enter timeout second: "))
+args = parser.parse_args()
 
-startport=int(input("Starting port(include): "))
-
-finishtport=int(input("Finishing port(include): "))
+# Get target and settings (interactive mode or arguments)
+if args.interactive:
+    target = input("Enter target ip address: ") 
+    timeout = float(input("Enter timeout second: "))
+    startport = int(input("Starting port(include): "))
+    finishtport = int(input("Finishing port(include): "))
+else:
+    target = args.target
+    timeout = args.timeout
+    startport = args.start_port
+    finishtport = args.end_port
 
 
 #Resolve hostname to Ip
