@@ -35,7 +35,7 @@ else:
 target_ip=socket.gethostbyname(target)
 
 print("-"*50)
-print("Scannning target: " + target_ip)
+print("Scanning target: " + target_ip)
 print("Time started: " + str(datetime.now()))
 print("-"*50)
 
@@ -87,7 +87,7 @@ try:
                         rep.write(f"-->Version: {rows[0].strip()}\n")
 
             except socket.timeout:
-                print("-->Timout-not found version info")
+                print("-->Timeout-not found version info")
             except:
                 print("--> data error")
         s.close()
